@@ -3,6 +3,12 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Chat from './pages/Chat'
 
+// This helper component checks the token EVERY time the route changes
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem('token');
+  return token ? children : <Navigate to="/login" />;
+};
+
 function App() {
   const token = localStorage.getItem('token')   /*Check if logged in */
 
@@ -11,10 +17,15 @@ function App() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/chat" element={
-        localStorage.getItem('token') ? <Chat /> : <Navigate to="/login" />
-      } />
-      /*If logged in, will go to chat page, else redirect to login page */
+      {/* Now we use the helper here */}
+      <Route 
+        path="/chat" 
+        element={
+          <ProtectedRoute>
+            <Chat />
+          </ProtectedRoute>
+        } 
+      />
     </Routes>
   )
 }
