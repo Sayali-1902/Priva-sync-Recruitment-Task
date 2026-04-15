@@ -7,10 +7,7 @@ This is a full-stack chatbot application only accessible to authorized users.
 3. **Database:** MongoDB (Atlas)
 4. **Authentication:** JWT (JSON Web Tokens), bycryptjs
 5. **AI:** Groq API (LLaMA 3.3 70B)
-<<<<<<< HEAD
-=======
-6. **Containerization:** Docker
->>>>>>> 16e5f7d (add: updated README, added docker configuration)
+6. **Containerising:** Docker
 
 ## Features
 1. User Signup and Login
@@ -59,8 +56,6 @@ This is a full-stack chatbot application only accessible to authorized users.
 3. Token is stored in localStorage on the frontend
 4. Every chat request sends the token in the Authorization header
 5. Backend middleware verifies the token before allowing access
-<<<<<<< HEAD
-=======
 
 ## To run on Docker
 
@@ -69,4 +64,3 @@ This is a full-stack chatbot application only accessible to authorized users.
 3. Run the following command in the root directory: *docker-compose up --build*
 4. Frontend: http://localhost:5173
 5. Backend: http://localhost:5000
->>>>>>> 16e5f7d (add: updated README, added docker configuration)
