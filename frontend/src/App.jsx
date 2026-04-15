@@ -11,7 +11,9 @@ function App() {
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/chat" element={token ? <Chat /> : <Navigate to="/login" />} /> 
+      <Route path="/chat" element={
+        localStorage.getItem('token') ? <Chat /> : <Navigate to="/login" />
+      } />
       /*If logged in, will go to chat page, else redirect to login page */
     </Routes>
   )

@@ -18,18 +18,29 @@ function Signup() {
     }
   }
 
-  return (
-    <div>
-      <h2>Signup here :D</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
-      <br />
+   return (
+    <div style={{
+      background: '#1a1a2e',
+      padding: '40px',
+      borderRadius: '16px',
+      width: '100%',
+      maxWidth: '400px',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
+    }}>
+      <h2 style={{ marginBottom: '8px', fontSize: '24px' }}>Create an Account right here :D</h2>
+      <p style={{ color: '#888', marginBottom: '24px', fontSize: '14px' }}>Sign up and chat away!</p>
+
+      {error && <p style={{ color: '#ff6b6b', marginBottom: '12px', fontSize: '14px' }}>{error}</p>}
+
+      <input placeholder="Full Name" value={name} onChange={e => setName(e.target.value)} />
       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-      <br />
       <input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      <br />
-      <button onClick={handleSignup}>Signup</button>
-      <p>Hold up, already have an account? <a href="/login">Login's right here!</a></p>
+
+      <button onClick={handleSignup}>Sign Up</button>
+
+      <p style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#888' }}>
+        Wait, you already have an account? <a href="/login">Login!</a>
+      </p>
     </div>
   )
 }

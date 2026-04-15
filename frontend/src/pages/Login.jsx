@@ -19,15 +19,27 @@ function Login() {
   }
 
   return (
-    <div>
-      <h2>Login!</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div style={{
+      background: '#1a1a2e',
+      padding: '40px',
+      borderRadius: '16px',
+      width: '100%',
+      maxWidth: '400px',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.4)'
+    }}>
+      <h2 style={{ marginBottom: '8px', fontSize: '24px' }}>Welcome Back :D</h2>
+      <p style={{ color: '#888', marginBottom: '24px', fontSize: '14px' }}>Login to continue chatting</p>
+
+      {error && <p style={{ color: '#ff6b6b', marginBottom: '12px', fontSize: '14px' }}>{error}</p>}
+
       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-      <br />
       <input placeholder="Password" type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      <br />
+
       <button onClick={handleLogin}>Login</button>
-      <p>Don't have an account :O ? <a href="/signup">Signup here!</a></p>
+
+      <p style={{ textAlign: 'center', marginTop: '16px', fontSize: '14px', color: '#888' }}>
+        Don't have an account :O ? No worries,  <a href="/signup">Sign Up</a>
+      </p>
     </div>
   )
 }
